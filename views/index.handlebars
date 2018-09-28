@@ -1,0 +1,61 @@
+<div class="jumbotron jumbotron-fluid">
+  <h1 align="center">Have a Burger!   <br><br>
+    <img src="https://cdn.arstechnica.net/wp-content/uploads/2018/08/IF-Burger-800x603.jpg" width="200px" align="center" alt="Yummy Burger!">
+  </h1>
+ 
+  <br>
+  <div class="container">
+  
+ 
+ 
+    <div class="row">
+      
+      <div class="col">
+        <h2 align="center">Burgers on their way!</h2>
+
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="col">
+      <h2 align="center">Devoured Burgers! </h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgers/burger-block devoured=true}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+  <h3>Add a Burger</h3>
+  <form class="create-form">
+
+    <fieldset class="form-group">
+      <label for="burger">Your Name:</label>
+        <input type="text" class="form-control" id="burger" name="name">
+      </fieldset>
+
+    <fieldset class="form-group">
+      <label for="ingredient">Pick your ingredients:</label>
+      <input type="text" class="form-control" id="ingredient" name="ingredient">
+    </fieldset>
+
+    <div class="form-group">
+      <label for="devoured">Devoured?</label><br>
+      <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+      <input type="radio" name="devoured" value="0"> Not devoured...
+    </div>
+
+    <button type="submit" class="create-form-btn btn btn-primary btn-lg">Add Burger</button>
+  </form>
+
+</div>
+</div>
