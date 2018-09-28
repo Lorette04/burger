@@ -1,4 +1,3 @@
-// Make sure we wait to attach  handlersour until the DOM is fully loaded.
 $(function() {
     $(".change-devoured").on("click", function(event) {
       var id = $(this).data("id");
