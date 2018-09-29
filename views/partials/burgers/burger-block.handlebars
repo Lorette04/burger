@@ -2,10 +2,11 @@
 	{{name}}:
 	
 	{{ingredient}}
+	<br>
 
 	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		{{#if devoured}}Need a box!{{else}}Bon appétit!{{/if}}
+		{{#if devoured}}Need a box!{{else}}Reorder Same Burger!{{/if}}
 	</button>
 
-	{{!-- <button class="delete-burger" data-id="{{this.id}}">DELETE!</button> --}}
+	<button class="delete-burger" data-id="{{this.id}}">Paid!</button>
 </li>

@@ -29,13 +29,14 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-    console.log("LOOK AT ME", req.body);
+    console.log("PUT CHANGES", req.body);
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
     burger.updateOne({
         devoured: req.body.devoured
+     
       //vegan: req.body.vegan  
     }, condition, function (result) {
         if (result.changedRows == 0) {
@@ -45,6 +46,9 @@ router.put("/api/burgers/:id", function (req, res) {
             res.status(200).end();
         }
     });
+       console.log("TEST: ", req.body.devoured);
+       console.log("TEST2: ", burger.updateOne);
+
 });
 
 router.delete("/api/burgers/:id", function (req, res) {
